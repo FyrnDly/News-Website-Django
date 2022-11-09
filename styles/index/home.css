@@ -1,0 +1,19 @@
+header .carousel .bg-content {
+  background-size: cover;
+  width: 100%;
+  height: 75vh;
+  filter: brightness(60%);
+}
+header .carousel .content {
+  top: 20%;
+  width: 60vw;
+  height: 270px;
+  overflow: hidden;
+}
+header .carousel .content a {
+  color: #fff;
+  text-decoration: none;
+}
+header .carousel .content a:hover {
+  color: rgb(223, 200, 223);
+}/*# sourceMappingURL=home.css.map */

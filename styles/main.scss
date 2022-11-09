@@ -1,0 +1,144 @@
+// Font
+// Import
+@font-face {
+    font-family: 'heading1';
+    src: url('../library/fonts/Noto_Sans/NotoSans-ExtraBold.ttf');
+}
+@font-face {
+    font-family: 'heading2';
+    src: url('../library/fonts/Noto_Sans/NotoSans-Bold.ttf');
+}
+@font-face {
+    font-family: 'heading3';
+    src: url('../library/fonts/Noto_Sans/NotoSans-Medium.ttf');
+}
+@font-face {
+    font-family: 'paragraph1';
+    src: url('../library/fonts/Noto_Sans/NotoSans-Regular.ttf');
+}
+@font-face {
+    font-family: 'pargraph2';
+    src: url('../library/fonts/Noto_Sans/NotoSans-Light.ttf');
+}
+@font-face {
+    font-family: 'paragraph3';
+    src: url('../library/fonts/Noto_Sans/NotoSans-ExtraLight.ttf');
+}
+@font-face {
+    font-family: 'logo';
+    src: url('../library/fonts/Poor_Story/PoorStory-Regular.ttf');
+}
+// Style Font
+body{
+    font-family: 'paragraph2';
+    p{
+        & .sub{
+        font-family: 'paragraph3';
+    }
+    }
+    b{
+        font-family: 'paragraph1';
+    }
+    h1{
+        font-family: 'heading1';
+    }
+    h2{
+        font-family: 'heading2';
+    }
+    h3{
+        font-family: 'heading3';
+    }
+    h4{
+        font-family: 'heading3';
+    }
+    h5{
+        font-family: 'heading3';
+    }
+}
+// navbar
+nav{
+    .navbar-brand{
+        font-family: 'logo';
+        font-size: 1.5rem;
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .nav-link:hover{
+        color: darkmagenta;
+    }
+    .dropdown-menu{
+        background-color: #212529;
+        hr{
+            background-color: #6c757d;
+        }
+        a{
+            color: #f8f9fa;
+            &:hover{
+                background-color: #e9ecef;
+                color: darkmagenta;
+            }
+        }
+    }
+}
+// Main Content
+main{
+    margin-top: 80px;
+    .content{
+        .main-post{
+            color:black;
+            text-decoration: none;
+            .img-fluid{
+                background-size: cover;
+                height: 300px;
+            }
+            .card-body{
+                height: 290px;
+                overflow: hidden;
+            }
+            &:hover{
+                color: rgb(34, 3, 34);
+            }
+        }
+        .post{
+            color:black;
+            text-decoration: none;
+            .img-fluid{
+                background-size: cover;
+                height: 180px;
+            }
+            .card-body{
+                height: 170px;
+                overflow: hidden;
+            }
+            &:hover{
+                color: rgb(34, 3, 34);
+            }
+        }
+    }
+}
+// Footer
+footer{
+    .brand{
+        img{
+            width: 60px;
+            height: 60px;
+        }
+        span{
+            font-family: 'logo';
+            font-size: 2.25rem;
+            margin-left: 2px;
+        }
+    }
+    a{
+        color: black;
+        text-decoration: none;
+        &:hover{
+            color: darkmagenta;
+        }
+    }
+    p{
+        opacity: 70%;
+    }
+}
