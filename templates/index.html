@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="styles/index/home.css">
+{% endblock style %}
+
+{% block content %}
+<header>
+    <div id="carousel" class="carousel carousel-light slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <div class="bg-content" style="background-image: url('{{ post1.image.url }}');"></div>
+                <div class="carousel-caption d-block content">
+                    <a href="{{ post1.getUrl }}l"><h1 class="text-start d-block">{{ post1.title }}</h1>
+                    <p class="text-start d-md-block">{{post1.body}}</p></a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="1500">
+                <div class="bg-content" style="background-image: url('{{ post2.image.url }}');"></div>
+                <div class="carousel-caption d-block content">
+                    <a href="{{ post2.getUrl }}l"><h1 class="text-start d-block">{{ post2.title }}</h1>
+                    <p class="text-start d-md-block">{{post2.body}}</p></a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="1500">
+                <div class="bg-content" style="background-image: url('{{ post3.image.url }}');"></div>
+                <div class="carousel-caption content">
+                    <a href="{{ post3.getUrl }}l"><h1 class="text-start d-block">{{ post3.title }}</h1>
+                    <p class="text-start d-md-block">{{post3.body}}</p></a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</header>
+<main class="container">
+    <div class="row content justify-content-around">
+        <!-- Main Post -->
+        <div class="col-md-12 p-2">
+            <a class="card main-post" href="{{ post4.getUrl }}l">
+                <div class="row g-0">
+                    <div class="col-md-5 img-fluid rounded-start" style="background-image: url('{{ post4.image.url }}');"></div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ post4.title }}</h2>
+                            <p class="card-text"><small class="text-muted">{{ post4.author }}, {{ post4.time }}</small></p>
+                            <p class="card-text">{{post4.body}}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Other Post -->
+        {% for post_list in posts %}
+            {% for post in post_list %}
+            {% if post != post1 and post != post2 and post != post3 and post != post4 %}
+            <div class="col-lg-6 p-2">
+                <a class="card post" href="{{ post.getUrl }}">
+                    <div class="row g-0">
+                        <div class="col-md-5 img-fluid rounded-start" style="background-image: url('{{ post.image.url }}');"></div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text"><small class="text-muted">{{ post.author }}, {{ post.time }}</small></p>
+                                <p class="card-text">{{ post.body }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+</main>
+{% endblock content %}

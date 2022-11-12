@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+    {% include 'include/styles.html' %}
+    {% block style %}{% endblock style %}
+
+</head>
+<body>
+
+    {% include 'include/nav.html' %}
+    {% block content %}{% endblock content %}
+    {% include 'include/footer.html' %}
+    {% include 'include/scripts.html' %}
+    {% block script %}{% endblock script %}
+
+</body>
+</html>

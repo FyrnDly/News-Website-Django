@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="styles/index/home.css">
+{% endblock style %}
+
+{% block content %}
+<main class="container">
+    <div class="row content justify-content-around">
+        <!-- Main Post -->
+        <div class="col-md-12 p-2">
+            <a class="card main-post" href="{{ post_main.getUrl }}">
+                <div class="row g-0">
+                    <div class="col-md-5 img-fluid rounded-start" style="background-image: url('{{ post_main.image.url }}');"></div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ post_main.title }}</h2>
+                            <p class="card-text"><small class="text-muted">{{ post_main.author }}, {{ post_main.time }}</small></p>
+                            <p class="card-text">{{ post_main.body }}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Other Post -->
+        {% for post in post_list %}
+        <div class="col-lg-6 p-2">
+            <a class="card post" href="{{ post.getUrl }}">
+                <div class="row g-0">
+                    <div class="col-md-5 img-fluid rounded-start" style="background-image: url('{{ post.image.url }}');"></div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ post.title }}</h2>
+                            <p class="card-text"><small class="text-muted">{{ post.author }}, {{ post.time }}</small></p>
+                            <p class="card-text">{{ post.body }}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock content %}

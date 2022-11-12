@@ -1,0 +1,61 @@
+{% load static %}
+<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark px-lg-5 px-3">
+    <a class="navbar-brand d-flex" href="/">
+        <img src="{% static 'asset/logo.png' %}" alt="Wk">
+        <span class="my-auto ps-1">wkNews</span>
+    </a>
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav"
+        aria-expanded="false" aria-label="toggleMenu"><i class="fa-solid fa-bars"></i></button>
+    <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+            <li class="nav-item"><a class="nav-link {% if title == 'Beranda' %}active{% endif %}" href="/">Beranda</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle {% if title == 'Indonesia' or path == 'Indonesia' %}active{% endif %}" href="#" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Indonesia
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown">
+                    <li><a class="dropdown-item" href="/indonesia">Indonesia</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/indonesia/ekonomi">Ekonomi</a></li>
+                    <li><a class="dropdown-item" href="/indonesia/sosial-dan-budaya">Sosial dan Budaya</a></li>
+                    <li><a class="dropdown-item" href="/indonesia/pemerintahan">Pemerintahan</a></li>
+                    <li><a class="dropdown-item" href="/indonesia/lainnya">Lainnya</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown"> 
+                <a class="nav-link dropdown-toggle {% if title == 'Dunia' or path == 'Dunia' %}active{% endif %}" href="#" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dunia
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown">
+                    <li><a class="dropdown-item" href="/dunia">Dunia</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/dunia/ekonomi">Ekonomi</a></li>
+                    <li><a class="dropdown-item" href="/dunia/sosial-dan-budaya">Sosial dan Budaya</a></li>
+                    <li><a class="dropdown-item" href="/dunia/pemerintahan">Pemerintahan</a></li>
+                    <li><a class="dropdown-item" href="/dunia/lainnya">Lainnya</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle {% if title == 'Kesehatan' or path == 'Kesehatan' %}active{% endif %}" href="#" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Kesehatan
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown">
+                    <li><a class="dropdown-item" href="/kesehatan">Kesehatan</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/kesehatan/olahraga">Olahraga</a></li>
+                    <li><a class="dropdown-item" href="/kesehatan/pola-hidup">Pola Hidup</a></li>
+                    <li><a class="dropdown-item" href="/kesehatan/makanan">Makanan</a></li>
+                    <li><a class="dropdown-item" href="/kesehatan/lainnya">Lainnya</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link {% if title == 'Pendidikan' %}active{% endif %}" href="/pendidikan">Pendidikan</a></li>
+            <li class="nav-item"><a class="nav-link {% if title == 'Teknologi' %}active{% endif %}" href="/teknologi">Teknologi</a></li>
+        </ul>
+        {% comment %} <form class="d-flex my-2 my-lg-0">
+            <div class="input-group my-auto">
+                <input class="form-control" type="text" placeholder="Temukan Artikelmu">
+                <button class="btn btn-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </form> {% endcomment %}
+    </div>
+</nav>

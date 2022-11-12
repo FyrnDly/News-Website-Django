@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="container">
+    <div class="row content-post">
+        <h2>{{ content.title }}</h2>
+        <p><small class="text-muted">{{ content.author }}, {{ content.time }}</small></p>
+        <div class="img-fluid img" style="background-image: url('{{ content.image.url }}');"></div>
+        <p>{{ content.body }}</p>
+    </div>
+    <div class="row content justify-content-around">
+    <!-- Other Post -->
+        <h3>Rekomendasi Berita Untukmu</h3>
+        {% if num_list < 2 %}
+            {% for post in post_other %}
+            {% if post.title != content.title %}
+            <div class="col-lg-6 p-2">
+                <a class="card post" href="{{post.getUrl}}">
+                    <div class="row g-0">
+                        <div class="col-md-5 img-fluid rounded-start" style="background-image: url('{{ post.image.url }}');"></div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text"><small class="text-muted">{{ post.author }}, {{ post.time }}</small></p>
+                                <p class="card-text">{{ post.body }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        {% else %}
+            {% for post in post_list %}
+            {% if post.title != content.title %}
+            <div class="col-lg-6 p-2">
+                <a class="card post" href="{{post.getUrl}}">
+                    <div class="row g-0">
+                        <div class="col-md-5 img-fluid rounded-start" style="background-image: url('{{ post.image.url }}');"></div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text"><small class="text-muted">{{ post.author }}, {{ post.time }}</small></p>
+                                <p class="card-text">{{ post.body }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</main>
+{% endblock content %}
