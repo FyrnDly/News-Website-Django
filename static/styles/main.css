@@ -1,30 +1,30 @@
 @font-face {
   font-family: "heading1";
-  src: url("../library/fonts/Noto_Sans/NotoSans-ExtraBold.ttf");
+  src: url("../library/fonts/NotoSans-ExtraBold.ttf");
 }
 @font-face {
   font-family: "heading2";
-  src: url("../library/fonts/Noto_Sans/NotoSans-Bold.ttf");
+  src: url("../library/fonts/NotoSans-Bold.ttf");
 }
 @font-face {
   font-family: "heading3";
-  src: url("../library/fonts/Noto_Sans/NotoSans-Medium.ttf");
+  src: url("../library/fonts/NotoSans-Medium.ttf");
 }
 @font-face {
   font-family: "paragraph1";
-  src: url("../library/fonts/Noto_Sans/NotoSans-Regular.ttf");
+  src: url("../library/fonts/NotoSans-Regular.ttf");
 }
 @font-face {
   font-family: "pargraph2";
-  src: url("../library/fonts/Noto_Sans/NotoSans-Light.ttf");
+  src: url("../library/fonts/NotoSans-Light.ttf");
 }
 @font-face {
   font-family: "paragraph3";
-  src: url("../library/fonts/Noto_Sans/NotoSans-ExtraLight.ttf");
+  src: url("../library/fonts/NotoSans-ExtraLight.ttf");
 }
 @font-face {
   font-family: "logo";
-  src: url("../library/fonts/Poor_Story/PoorStory-Regular.ttf");
+  src: url("../library/fonts/PoorStory-Regular.ttf");
 }
 body {
   font-family: "paragraph2";

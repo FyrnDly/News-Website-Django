@@ -4,7 +4,7 @@ from .models import Post
 # Create your views here.
 def index(request):
     mainPost = Post.objects.order_by('-time')[0]
-    posts= Post.objects.order_by('-time')[1:10]
+    posts= Post.objects.order_by('-time')[1:]
     contentText = {
         'title' : 'Kesehatan',
         'path' : 'wkwkNews',
@@ -15,7 +15,7 @@ def index(request):
 
 def category(request, category):
     mainPost = Post.objects.filter(category=category)[0]
-    posts= Post.objects.filter(category=category)[1:10]
+    posts= Post.objects.filter(category=category)[1:]
     contentText = {
         'title' : category,
         'path' : 'Kesehatan',

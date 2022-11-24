@@ -1,3 +1,19 @@
 {% load static %}
-<script src="{% static 'popper/popper.min.js' %}""></script>
-<script src="{% static 'bootstrap/bootstrap.min.js' %}""></script>
+<script src="{% static 'popper/popper.min.js' %}"></script>
+<script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+<script>
+    function createSlug(text) {
+        return text.toString().toLowerCase()
+            .replace(/^-+/, '')
+            .replace(/-+$/, '')
+            .replace(/\s+/g, '-')
+            .replace(/\-\-+/g, '-')
+            .replace(/[^\w\-]+/g, '');
+    }
+
+    function search() {
+        var key = document.getElementById("key").value;
+        var link = createSlug(key)
+        window.location.href = '/search/' + link
+    }
+</script>

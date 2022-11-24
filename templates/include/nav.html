@@ -7,7 +7,7 @@
     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav"
         aria-expanded="false" aria-label="toggleMenu"><i class="fa-solid fa-bars"></i></button>
     <div class="collapse navbar-collapse" id="menuNav">
-        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav ms-md-auto me-md-auto mt-2 mt-lg-0">
             <li class="nav-item"><a class="nav-link {% if title == 'Beranda' %}active{% endif %}" href="/">Beranda</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle {% if title == 'Indonesia' or path == 'Indonesia' %}active{% endif %}" href="#" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,11 +51,12 @@
             <li class="nav-item"><a class="nav-link {% if title == 'Pendidikan' %}active{% endif %}" href="/pendidikan">Pendidikan</a></li>
             <li class="nav-item"><a class="nav-link {% if title == 'Teknologi' %}active{% endif %}" href="/teknologi">Teknologi</a></li>
         </ul>
-        {% comment %} <form class="d-flex my-2 my-lg-0">
-            <div class="input-group my-auto">
-                <input class="form-control" type="text" placeholder="Temukan Artikelmu">
-                <button class="btn btn-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <form class="d-flex my-2 my-lg-0">
+            <div class="input-group my-md-auto">
+                <input class="form-control" type="text" id="key" placeholder="Temukan Artikelmu">
+                <button class="btn btn-light" type="button" onclick="search()"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-        </form> {% endcomment %}
+        </form>
     </div>
 </nav>
